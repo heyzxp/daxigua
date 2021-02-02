@@ -1022,11 +1022,13 @@ window.__require = function e(t, n, o) {
             scale: .9
           }).union().repeatForever().start()
         }, t.prototype.update = function (e) {
-        }, t.prototype.adsButtonFunc2 = function () {
-          if (adLink) {
-            window.location.href = adLink
-          }
-        }, t.prototype.bannerButtonFunc = function () {
+        }, 
+        // t.prototype.adsButtonFunc2 = function () {
+        //   if (adLink) {
+        //     window.location.href = adLink
+        //   }
+        // },
+         t.prototype.bannerButtonFunc = function () {
           if (adLink) {
             window.location.href = adLink
           }
@@ -1752,7 +1754,7 @@ window.__require = function e(t, n, o) {
           for (var n = 0; n < 3; n++) setTimeout(function () {
             var t = r.default.Spawn("star", cc.find("Canvas/upEffectParent"));
             t.position = e.position, t.scale = .3, t.runAction(cc.sequence(cc.scaleTo(.5, 1.1), cc.fadeOut(.5)))
-          }, 300 * n)
+          }, 3 * n)
         }, t.prototype.addScoreEffect = function () {
           var e = r.default.Spawn("add1", cc.find("Canvas/mainGameUi"));
           e.position = cc.find("Canvas/mainGameUi").children[0].position.add(cc.v2(0, 50)), e.runAction(cc.spawn(cc.moveBy(.5, 0, 50), cc.fadeOut(.5)))
@@ -1997,11 +1999,13 @@ window.__require = function e(t, n, o) {
           }).delay(.5).union().repeatForever().start()
         }, t.prototype.update = function (e) {
           this.UpdateScoreLabel(e), this.lerpCtrl && this.lerpNumFunc(this.passlevelYQ), this.levelPanel.children[1].getComponent(cc.Label).string = s.default.Instance.GetLevel().toString()
-        }, t.prototype.adsButtonFunc = function () {
-          if (adLink) {
-            window.location.href = adLink;
-          }
-        }, t.prototype.TestPasslevel = function () {
+        }, 
+        // t.prototype.adsButtonFunc = function () {
+        //   if (adLink) {
+        //     window.location.href = adLink;
+        //   }
+        // },
+         t.prototype.TestPasslevel = function () {
           var e = this;
           this.lerpCtrl = !0, this.nowYQ >= this.passlevelYQ && (this.levelPanel.children[2].runAction(cc.sequence(cc.delayTime(1.3), cc.callFunc(function () {
             e.relerpCtrl = !0, e.lerpCtrl = !1
@@ -3492,7 +3496,7 @@ window.__require = function e(t, n, o) {
             var fruitVolume = reverseLevelUp ? -1 : 1;
             // 合成水果，水果下标 0-9 (0 为葡萄，9 为半个西瓜，有一些特殊逻辑)
             c == r && (reverseLevelUp ? (c > border && r > border) : (c < border && r < border)) ? (this.pengzhuangCount += 1,
-              0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + (extraScore ? extraScore : 1), // 改分数
+              0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += ((this.fruitNumber+1) * (extraScore ? extraScore : 1)), // 改分数
                 u.default.Instance.SetScoreTween(a.default.score),
                 n.node.getComponent(cc.PhysicsCircleCollider).radius = 0,
                 n.node.getComponent(cc.PhysicsCircleCollider).apply(),
@@ -3507,7 +3511,7 @@ window.__require = function e(t, n, o) {
                 }).start())) :
               c == r && border == c && border == r && // 边界逻辑
               (this.pengzhuangCount += 1,
-              0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += this.fruitNumber + (extraScore ? extraScore : 1), // 改分数
+              0 == t.node.getComponent("fruitData").getNumber() && (a.default.score += ((this.fruitNumber+1) * (extraScore ? extraScore : 1)), // 改分数
                 u.default.Instance.SetScoreTween(a.default.score),
                 n.node.getComponent(cc.PhysicsCircleCollider).radius = 0,
                 n.node.getComponent(cc.PhysicsCircleCollider).apply(),
@@ -3552,7 +3556,7 @@ window.__require = function e(t, n, o) {
           for (var n = 0; n < 3; n++) setTimeout(function () {
             var t = r.default.Spawn("star", cc.find("Canvas/upEffectParent"));
             t.position = e.position, t.scale = .3, t.runAction(cc.sequence(cc.scaleTo(.5, 1.1), cc.fadeOut(.5)))
-          }, 300 * n)
+          }, 3 * n)
         }, t.prototype.addScoreEffect = function () {
           var e = r.default.Spawn("add1", cc.find("Canvas/mainGameUi"));
           e.position = cc.find("Canvas/mainGameUi").children[0].position.add(cc.v2(0, 50)), e.runAction(cc.spawn(cc.moveBy(.5, 0, 50), cc.fadeOut(.5)))
